@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, Typography } from '@mui/material';
+import { Box, Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, Typography, Checkbox } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { red } from '@mui/material/colors';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
 
 export const Feed = () => {
     return(
@@ -26,8 +27,8 @@ export const Feed = () => {
       />
       <CardMedia
         component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
+        height="20%"
+        image="https://images.pexels.com/photos/2462253/pexels-photo-2462253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Paella dish"
       />
       <CardContent>
@@ -39,7 +40,7 @@ export const Feed = () => {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{color:"red"}} />} />
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
