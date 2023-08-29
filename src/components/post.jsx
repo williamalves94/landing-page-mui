@@ -21,13 +21,13 @@ export const Post = () => {
                 <MoreVertIcon />
                 </IconButton>
                 }
-                title="Streets"
-                subheader="September 14, 2016"
+                title="Mountains"
+                subheader="August, 2023"
             />
             <CardMedia
                 component="img"
                 height="20%"
-                image="https://images.pexels.com/photos/2462253/pexels-photo-2462253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"                
+                image="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"                
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">

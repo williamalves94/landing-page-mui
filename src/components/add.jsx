@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { Tooltip, Fab, Box, Typography, Modal } from '@mui/material';
+import { Tooltip, Fab, Box, Typography, Modal, styled } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+
+const StyledModal = styled(Modal)({
+    display:"flex",
+    alignItems: "center",
+    justifyContent: "center",
+})
 
 export const Add = () => {
     const [open, setOpen] = useState(false)
@@ -17,7 +23,7 @@ export const Add = () => {
                     <AddIcon />
                 </Fab>
             </Tooltip>
-            <Modal
+            <StyledModal
                 open={open}
                 onClose={ e=>setOpen(false) }
                 aria-labelledby="modal-modal-title"
@@ -29,9 +35,18 @@ export const Add = () => {
                     bgcolor="white" 
                     p={3}
                     borderRadius={3}>
-                    
+                    <Typography 
+                        variant="h6" 
+                        color='gray'
+                        textAlign='center'
+                    >
+                        Create post
+                    </Typography>
+                    <UserBox>
+                        <Avatar src=""/>        
+                    </UserBox>
                 </Box>
-            </Modal>
+            </StyledModal>
         </>
     );
 };
