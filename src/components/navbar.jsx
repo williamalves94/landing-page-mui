@@ -38,7 +38,7 @@ export const Navbar = () => {
     return(
         <AppBar position="sticky">
            <StyledToolbar>
-            <Typography variant='h6' sx={{ display: { xs:"none", sm: "block" }}}>William Dev</Typography>
+            <Typography variant='h6' sx={{ display: { xs:"none", sm: "block" }}}>Development</Typography>
             <MenuIcon sx={{ display: { xs:"block", sm:"none" }}}/>
             <Search><InputBase placeholder="search..." /></Search>
             <Icons>
