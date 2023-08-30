@@ -9,7 +9,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 
-export const Sidebar = () => {
+export const Sidebar = ({ mode, setMode }) => {
     return(
         
         <Box  
@@ -80,7 +80,7 @@ export const Sidebar = () => {
                         <ListItemIcon>
                             <ModeNightIcon />              
                         </ListItemIcon>
-                        <Switch />
+                        <Switch onChange={ e => setMode( mode === "light" ? "dark" : "light") }/>
                     </ListItemButton>
                 </ListItem>
             </List>

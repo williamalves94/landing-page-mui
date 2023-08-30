@@ -43,10 +43,11 @@ export const Add = () => {
                 >
                 <Box 
                     width={400} 
-                    height={280} 
-                    bgcolor="white" 
+                    height={300} 
+                    bgcolor={"background.default"}
+                    color={"text.primary"} 
                     p={3}
-                    borderRadius={3}>
+                    borderRadius={3} >
                     <Typography 
                         variant="h6" 
                         color='gray'
@@ -77,14 +78,15 @@ export const Add = () => {
                         <VideoCameraBackIcon color="sucess"/>
                         <PersonAddIcon color="error"/>
                     </Stack>
-                    <ButtonGroup 
+                    <ButtonGroup
+                        fullWidth 
                         variant="contained"
                         aria-label="outlined primary button group"
                     >
                         <Button>
                             Post
                         </Button>
-                        <Button>
+                        <Button sx={{width:"100px"}}>
                             <DateRangeIcon/>
                         </Button>
                     </ButtonGroup>
