@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, styled, Box, InputBase, Badge, Avatar, MenuItem, Menu } from '@mui/material';
-import { Pets, Mail, Notifications } from '@mui/icons-material'
+import { Mail, Notifications } from '@mui/icons-material'
+import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
@@ -38,7 +39,7 @@ export const Navbar = () => {
         <AppBar position="sticky">
            <StyledToolbar>
             <Typography variant='h6' sx={{ display: { xs:"none", sm: "block" }}}>William Dev</Typography>
-            <Pets sx={{ display: { xs:"block", sm:"none" }}}/>
+            <MenuIcon sx={{ display: { xs:"block", sm:"none" }}}/>
             <Search><InputBase placeholder="search..." /></Search>
             <Icons>
                 <Badge badgeContent={4} color="error">
