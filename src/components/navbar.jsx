@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, styled, Box, InputBase, Badge, Avatar, MenuItem, Menu, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, styled, Box, InputBase, Badge, Avatar, MenuItem, Menu, Switch } from '@mui/material';
 import { Mail, Notifications } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
+import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
@@ -34,12 +34,12 @@ const UserBox = styled(Box)(({ theme }) => ({
     }    
 }));
 
-export const Navbar = () => {
+export const Navbar = ({ mode, setMode }) => {
 
     const [open, setOpen ] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openSide = Boolean(anchorEl);
-    
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -51,10 +51,9 @@ export const Navbar = () => {
     return(
         <AppBar position="sticky">
             <StyledToolbar>
-                <Typography variant='h6' sx={{ display: { xs:"none", sm: "block" }}}>Development</Typography>
-                            
+                <Typography variant='h6' sx={{ display: { xs:"none", sm: "block" }}}>Development</Typography>                            
                     <MenuIcon
-                        sx={{ display: {  sm: "block" }}}
+                        sx={{ display: {  lg: "none", md: "none", sm: "none" }, cursor: "pointer"}}
                         id="basic-button"
                         aria-controls={openSide ? 'basic-menu' : undefined}
                         aria-haspopup="true"
@@ -76,6 +75,7 @@ export const Navbar = () => {
                             <MenuItem onClick={handleClose}>Friends</MenuItem>
                             <MenuItem onClick={handleClose}>Marketplace</MenuItem>
                             <MenuItem onClick={handleClose}>Settings</MenuItem>
+                            <MenuItem ><ModeNightIcon/><Switch onChange={ ev => setMode( mode === "light" ? "dark" : "light") }/></MenuItem>
                     </Menu>
                     
                 <Search><InputBase placeholder="search..." /></Search>
@@ -86,10 +86,10 @@ export const Navbar = () => {
                     <Badge badgeContent={4} color="error">
                         <Notifications />
                     </Badge>
-                    <Avatar onClick={ e => setOpen(true) } sx={{width: 30, height: 30}}  src=""/>
+                    <Avatar onClick={ e => setOpen(true) } sx={{width: 30, height: 30, }}  src=""/>
                 </Icons>
                 <UserBox onClick={ e => setOpen(true) }>
-                    <Avatar sx={{width: 30, height: 30}}  src=""/>
+                    <Avatar sx={{width: 30, height: 30, cursor:"pointer"}}  src=""/>
                     <Typography variant="span" >John</Typography>
                 </UserBox>
             </StyledToolbar>
@@ -107,6 +107,12 @@ export const Navbar = () => {
                 horizontal: 'left',
                 }}
             >
+                <Badge badgeContent={4} color="error" sx={{ display: {  lg: "none", md: "none", sm: "none" }, cursor: "pointer", mt:1, ml: 2}}>
+                    <Mail sx={{ display: {  lg: "none", md: "none", sm: "none" }, cursor: "pointer" }}/>
+                </Badge>
+                <Badge badgeContent={4} color="error" sx={{ display: {  lg: "none", md: "none", sm: "none" }, cursor: "pointer", mt:1, ml: 2}}>
+                    <Notifications sx={{ display: {  lg: "none", md: "none", sm: "none" }, cursor: "pointer" }}/>
+                </Badge>
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>My account</MenuItem>
                 <MenuItem>Logout</MenuItem>
